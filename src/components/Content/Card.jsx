@@ -20,9 +20,6 @@ function Card({ price, book, imageUrl, id }) {
             </div>
             <div>
               <h1 className="font-bold">View product</h1>
-              {/* <div className="pt-2 pr-4 cursor-pointer">
-                <MdTrolley className="text-4xl" />
-              </div> */}
             </div>
           </div>
         </div>

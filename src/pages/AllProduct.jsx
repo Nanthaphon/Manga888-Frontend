@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CardAdmin from "./CardAdmin";
-
+import axios from "../config/axios";
 export default function AllProduct() {
+  const [product, setProduct] = useState([]);
+  useEffect(() => {
+    axios
+      .get("/product/getAllAdmin")
+      .then((res) => setProduct(res.data.findProduct));
+  }, []);
   return (
-    <div>
-      <h1>fuck</h1>
-      <CardAdmin
-        price={el.price}
-        book={el.name}
-        imageUrl={el.image}
-        id={el.id}
-      />
+    <div className="flex flex-row">
+      {product.map((el) => (
+        <CardAdmin price={el.price} name={el.name} imageUrl={el.image} />
+      ))}
     </div>
   );
 }
