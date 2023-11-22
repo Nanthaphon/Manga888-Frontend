@@ -20,10 +20,10 @@ export default function CreateProduct() {
     console.log(newProduct, "products");
   };
   return (
-    <div className=" flex flex-col w-full items-center mt-32">
-      <h1 className="flex flex-col items-center justify-center font-bold text-xl">
-        Create Product
-      </h1>
+    <div className=" flex flex-col w-full items-center">
+      <div className="w-full ">
+        <h1 className="text-2xl">Create product</h1>
+      </div>
       <form
         className="flex flex-col w-[500px] gap-5"
         onSubmit={handleSubmitForm}

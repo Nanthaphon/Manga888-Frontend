@@ -1,20 +1,27 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { MdTrolley } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function Viewproduct() {
+  const [detail, setDetail] = useState({});
+
+  const { productId } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`/product/viewProductByid/${productId}`)
+      .then((res) => setDetail(res.data.findProduct));
+  }, []);
+
   return (
     <div className="mx-auto gap-8 flex flex-col justify-center w-full">
       <div className="flex justify-center font-bold text-3xl pt-8">
-        My Hero Academia
+        {detail.name}
       </div>
       <div className="flex gap-5">
         <div>
-          <img
-            className="w-[300px] h-[400px]"
-            src="https://i.pinimg.com/564x/90/61/d2/9061d27de978c1c8617f5767f2033561.jpg"
-            alt=""
-          />
+          <img className="w-[300px] h-[400px]" src={detail.image} alt="" />
         </div>
         <div className="flex flex-col gap-5 w-11/12">
           <div className="flex flex-row gap-4 ">
@@ -31,11 +38,7 @@ function Viewproduct() {
             </div>
           </div>
           <div className="text-2xl w-full">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
-            praesentium magnam aspernatur quae voluptas tempora autem
-            exercitationem adipisci ratione esse blanditiis, deserunt maiores
-            cum placeat assumenda, culpa itaque eum neque recusandae dicta rem
-            accusantium modi? Non illo iure dolorum. Ullam repudiandae odit
+            <p>{detail.description}</p>
           </div>
         </div>
       </div>

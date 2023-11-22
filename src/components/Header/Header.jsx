@@ -13,7 +13,7 @@ function Header() {
   const { logout, authUser } = useAuth();
   return (
     <>
-      <header className="bg-green-500 flex justify-between px-8 h-20  items-center p-3 fixed top-0 left-0 right-0 shadow-md z-10">
+      <header className="bg-green-500 flex justify-between px-8 h-20  items-center p-3 top-0 left-0 right-0 shadow-md z-10">
         <div className="flex space-x-8 font-semibold text-white">
           <Link to="/">
             <button className="text-xl">Manga888</button>

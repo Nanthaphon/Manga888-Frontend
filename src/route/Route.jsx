@@ -12,6 +12,7 @@ import RedirectAuthenticated from "../features/auth/RedirectAuthenticated";
 import Authenticated from "../features/auth/Authenticate";
 import CreateProduct from "../pages/CreateProduct";
 import AdminCreateProduct from "../pages/AdminCreateProduct";
+import AdminPage from "../pages/AdminPage";
 
 const router = createBrowserRouter([
   {
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
       {
-        path: "viewproduct",
+        path: "viewproduct/:productId",
         element: <Viewproduct />,
       },
       {
@@ -68,7 +69,7 @@ const router = createBrowserRouter([
       },
       {
         path: "admin",
-        element: <AdminCreateProduct />,
+        element: <AdminPage />,
       },
     ],
   },

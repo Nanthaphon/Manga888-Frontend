@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MdTrolley } from "react-icons/md";
 import Footer from "../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import Card from "../components/Content/Card";
+import axios from "axios";
 
 function Homepage() {
+  const [product, setProduct] = useState([]);
+  // console.log(">>>>>>>>>>>>>", product);
+
+  useEffect(() => {
+    axios
+      .get("/product/getAll")
+      .then((res) => setProduct(res.data.findProduct));
+  }, []);
   return (
     <div>
       <div className="  bg-orange-400  ">
@@ -22,7 +31,14 @@ function Homepage() {
           </Link> */}
         </div>
         <div className="grid grid-cols-4">
-          <Card price="200$" book="Naruto Fuck" />
+          {product.map((el) => (
+            <Card
+              price={el.price}
+              book={el.name}
+              imageUrl={el.image}
+              id={el.id}
+            />
+          ))}
         </div>
       </div>
       <Footer />
