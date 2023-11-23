@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ImBin } from "react-icons/im";
 
 function CartItem() {
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(1);
 
   const addBook = () => {
     setCount(count + 1);

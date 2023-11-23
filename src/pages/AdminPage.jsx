@@ -23,8 +23,10 @@ export default function AdminPage() {
           </h1>
         </div>
       </div>
-      <div className="bg-red-300 w-full ">
-        <div>{mode === "createproduct" ? <CreateProduct /> : ""}</div>
+      <div className=" w-full ">
+        <div>
+          {mode === "createproduct" ? <CreateProduct setMode={setMode} /> : ""}
+        </div>
         <div>{mode === "allproduct" ? <AllProduct /> : ""}</div>
       </div>
     </div>

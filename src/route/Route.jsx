@@ -11,8 +11,10 @@ import Register from "../pages/RegisterForm";
 import RedirectAuthenticated from "../features/auth/RedirectAuthenticated";
 import Authenticated from "../features/auth/Authenticate";
 import CreateProduct from "../pages/CreateProduct";
-import AdminCreateProduct from "../pages/AdminCreateProduct";
+
 import AdminPage from "../pages/AdminPage";
+import EditProduct from "../pages/EditProduct";
+import CheckoutPage from "../pages/CheckoutPage";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +72,14 @@ const router = createBrowserRouter([
       {
         path: "admin",
         element: <AdminPage />,
+      },
+      {
+        path: "editproduct/:productId",
+        element: <EditProduct />,
+      },
+      {
+        path: "checkout",
+        element: <CheckoutPage />,
       },
     ],
   },

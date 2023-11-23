@@ -17,7 +17,9 @@ export default function CreateProduct({ setMode }) {
     }
 
     const newProduct = await axios.post("/product/create", formData);
-    setMode("allproduct");
+    if (newProduct) {
+      alert("Already upload");
+    }
     console.log(newProduct, "products");
   };
   return (
@@ -52,7 +54,7 @@ export default function CreateProduct({ setMode }) {
         />
         <textarea
           onChange={(e) => setInput({ ...input, description: e.target.value })}
-          class="resize rounded-md border border-gray-600 bg-gray-200 px-3"
+          className="resize rounded-md border border-gray-600 bg-gray-200 px-3"
           placeholder="Description"
         ></textarea>
         <div className="flex justify-center items-center">
