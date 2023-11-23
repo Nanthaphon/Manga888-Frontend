@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "../config/axios";
 
-export default function CreateProduct() {
+export default function CreateProduct({ setMode }) {
   const [input, setInput] = useState({
     image: "",
     price: "",
@@ -17,6 +17,7 @@ export default function CreateProduct() {
     }
 
     const newProduct = await axios.post("/product/create", formData);
+    setMode("allproduct");
     console.log(newProduct, "products");
   };
   return (

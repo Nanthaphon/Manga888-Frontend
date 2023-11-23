@@ -9,7 +9,9 @@ function Homepage() {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    axios.get("/product/getAll").then((res) => console.log(res));
+    axios
+      .get("/product/getAll")
+      .then((res) => setProduct(res.data.findProduct));
   }, []);
   return (
     <div>

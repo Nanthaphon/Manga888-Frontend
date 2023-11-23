@@ -1,10 +1,14 @@
+import axios from "axios";
 import React from "react";
 
 export default function CardAdmin({ id, price, name, imageUrl }) {
+  const handleOnDelete = async () => {
+    await axios.delete(`/product/deleteProduct/${id}`);
+  };
   return (
     <div>
       <div
-        key={id}
+        // key={id}
         className="border border-gray-600 rounded-md w-[311px] max-h-[542px] shadow-lg"
       >
         <div>
@@ -20,7 +24,7 @@ export default function CardAdmin({ id, price, name, imageUrl }) {
           </div>
         </div>
         <div className="flex flex-row justify-between">
-          <button>ลบ</button>
+          <button onClick={handleOnDelete}>ลบ</button>
           <button>แก้ไข</button>
         </div>
       </div>

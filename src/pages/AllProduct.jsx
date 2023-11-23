@@ -7,11 +7,16 @@ export default function AllProduct() {
     axios
       .get("/product/getAllAdmin")
       .then((res) => setProduct(res.data.findProduct));
-  }, []);
+  }, [product]);
   return (
     <div className="flex flex-row">
       {product.map((el) => (
-        <CardAdmin price={el.price} name={el.name} imageUrl={el.image} />
+        <CardAdmin
+          price={el.price}
+          name={el.name}
+          imageUrl={el.image}
+          id={el.id}
+        />
       ))}
     </div>
   );
