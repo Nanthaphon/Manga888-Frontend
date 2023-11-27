@@ -15,6 +15,8 @@ import CreateProduct from "../pages/CreateProduct";
 import AdminPage from "../pages/AdminPage";
 import EditProduct from "../pages/EditProduct";
 import CheckoutPage from "../pages/CheckoutPage";
+import OrderProduct from "../pages/OrderHistory";
+import PaymentSuccess from "../pages/PaymentSuccess";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +82,10 @@ const router = createBrowserRouter([
       {
         path: "checkout",
         element: <CheckoutPage />,
+      },
+      {
+        path: "payment",
+        element: <PaymentSuccess />,
       },
     ],
   },

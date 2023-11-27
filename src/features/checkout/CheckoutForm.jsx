@@ -60,6 +60,8 @@ export default function CheckoutForm({
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
+  console.log("getCart", getCart);
+
   //   const handleSubmitForm = (e) => {
   //     e.preventDefault();
   //     // const validateError = validateAdress(input);
@@ -97,7 +99,7 @@ export default function CheckoutForm({
       console.log(error.message);
     } finally {
       setLoading(false);
-      navigate("/");
+      navigate("/payment");
     }
   };
 

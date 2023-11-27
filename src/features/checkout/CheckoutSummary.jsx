@@ -6,16 +6,19 @@ import QRImage from "../qr/QRImage";
 import QRInputSlip from "../qr/QRInputSlip";
 
 export default function CheckoutSummary({ file, setFile, getCart }) {
+  console.log(getCart);
   //   const { cart, grandTotal } = useCart();
-  const price = +getCart?.product.price;
-  const amount = +getCart?.amount;
-  const result = price * amount;
+
+  // const price = +getCart?.product?.price;
+  // console.log(price);s
+  // const amount = +getCart?.amount;
+  // const result = price * amount;
   return (
     <div className="pl-[48px] pt-12 gap-5 w-[70%] bg-neutral-100 ">
       <div className="flex flex-row justify-between mb-2 w-[305px]">
         <div className="text-[16px]">Subtotal</div>
         <div className="text-[16px] font-semibold">
-          {Number(getCart.product.price).toLocaleString("en-US")}
+          {Number(getCart.product?.price).toLocaleString("en-US")}
         </div>
       </div>
       <div className="flex flex-row justify-between mb-2 w-[305px]">
@@ -26,7 +29,8 @@ export default function CheckoutSummary({ file, setFile, getCart }) {
         <div className=" text-[19px] font-semibold">Total</div>
         <div className="font-semibold text-[17px]">
           <span className="font-thin text-[15px]">THB </span>
-          {Number(result).toLocaleString("en-US")}
+          {getCart.product?.price * getCart.amount}
+          {/* {Number(result).toLocaleString("en-US")} */}
         </div>
       </div>
       <div className="">

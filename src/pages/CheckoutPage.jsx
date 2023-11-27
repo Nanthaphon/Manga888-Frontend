@@ -24,7 +24,9 @@ export default function CheckoutPage() {
     setLoading(true);
     axios
       .get("/auth/getCart")
-      .then((res) => setGetCart(res.data.getCartProduct))
+      .then((res) => {
+        setGetCart(res.data.getCartProduct);
+      })
       .catch((err) => console.log(err))
       .finally(setLoading(false));
   }, []);

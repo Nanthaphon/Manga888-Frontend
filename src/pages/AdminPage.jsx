@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CreateProduct from "./CreateProduct";
 import AllProduct from "./AllProduct";
+import OrderHistory from "./OrderHistory";
 
 export default function AdminPage() {
   const [mode, setMode] = useState("");
@@ -21,6 +22,12 @@ export default function AdminPage() {
           >
             All product
           </h1>
+          <h1
+            onClick={() => setMode("orderhistory")}
+            className="border w-full text-center py-1.5"
+          >
+            Order Product
+          </h1>
         </div>
       </div>
       <div className=" w-full ">
@@ -28,6 +35,7 @@ export default function AdminPage() {
           {mode === "createproduct" ? <CreateProduct setMode={setMode} /> : ""}
         </div>
         <div>{mode === "allproduct" ? <AllProduct /> : ""}</div>
+        <div>{mode === "orderhistory" ? <OrderHistory /> : ""}</div>
       </div>
     </div>
   );

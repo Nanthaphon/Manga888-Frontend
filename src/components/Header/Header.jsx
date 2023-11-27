@@ -20,9 +20,9 @@ function Header() {
           </Link>
         </div>
         <div className="flex gap-8 items-center">
-          <Link to="/cart">
+          {/* <Link to="/cart">
             <h1 className="font-bold text-white">ตะกร้าสินค้า</h1>
-          </Link>
+          </Link> */}
           {authUser && (
             <button
               onClick={logout}
